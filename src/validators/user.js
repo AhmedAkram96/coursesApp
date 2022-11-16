@@ -66,14 +66,12 @@ const updateNameInput = ((requestBody) => {
                 .string()
                 .trim()
                 .lowercase()
-                .max(32)
-                .required(),
+                .max(32),
             last_name: joi
                 .string()
                 .trim()
                 .lowercase()
                 .max(32)
-                .required(),
         })
     const { error, value: body } = schema.validate(requestBody);
     if (error) {

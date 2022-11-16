@@ -10,7 +10,7 @@ router.post("/signup", asyncHandler(userController.signUp))
 router.post("/signin", asyncHandler(userController.signIn))
 
 router.get("/", isAuthenticated, asyncHandler(userController.viewUserDetails))
-router.delete("/", isAuthenticated, asyncHandler(userController.deleteUser))
+router.delete("/:id", isAuthenticated, asyncHandler(userController.deleteUser))
 router.patch("/profilePicture", isAuthenticated, profilePicture.single("profilePicture"), asyncHandler(userController.updateProfilePicture))
 router.patch("/updateName", isAuthenticated, asyncHandler(userController.updateName))
 module.exports = { userRouter: router };

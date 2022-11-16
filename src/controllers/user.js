@@ -79,7 +79,7 @@ const viewUserDetails = (async (req, res) => {
 
 })
 const deleteUser = (async (req, res) => {
-    const id = req.decodedToken.id
+    const id = req.params.id
     try {
         const result = await userServices.deleteUser(id)
         return res.status(200).json({
@@ -119,6 +119,7 @@ const updateName = (async (req, res) => {
     try {
         body = userValidator.updateNameInput(req.body)
     } catch (error) {
+        console.log(error)
         return res.status(400).json({
             status: 400,
             message: "Bad Request",
@@ -127,11 +128,10 @@ const updateName = (async (req, res) => {
     }
     try {
         const id = req.decodedToken.id
-        const { first_name, last_name } = body
-        const user = await userServices.updateName(first_name, last_name, id)
+        const user = await userServices.updateName(body, id)
         return res.status(200).json({
             status: 200,
-            message: "user deleted successfully",
+            message: "user updated successfully",
             data: user
         })
     } catch (error) {

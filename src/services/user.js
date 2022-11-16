@@ -66,9 +66,11 @@ const updateProfilePicture = (async (path, id) => {
     }
 })
 
-const updateName = (async (first_name, last_name, id) => {
+const updateName = (async (body, id) => {
     try {
-        return userDAL.updateName(first_name, last_name, id);
+        var user = await userDAL.viewUserDetails(id)
+        user = { ...user, ...body }
+        return userDAL.updateName(user.first_name, user.last_name, id);
     } catch (error) {
         throw error
     }
