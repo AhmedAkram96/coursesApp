@@ -16,9 +16,11 @@
   1. create `.env` file similar to `env.example` file and fill it with privately given values.
   2. In a terminal, RUN `npm install`
   3. RUN `npm start`
-  4. Finally, use the documentation here to work with the app.
+  4. Finally, use the documentation to work with the app.
 
+- Documentation
 
+Please find documentation published [here](https://documenter.getpostman.com/view/8759901/2s8YmHxjqH)
 ## Notes and Assumptions:
 
 1. I assumed no need for image deployment in a remote storage and use local storage for saving profile pictures instead.
