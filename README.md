@@ -17,3 +17,10 @@
 2. In a terminal, RUN `npm install`
 3. RUN `npm start`
 4. Finally, use the documentation here to work with the app.
+
+
+## Notes and Assumptions:
+
+1. I assumed no need for image deployment in a remote storage and use local storage for savinf profile pictures.
+2. creating a user is a separate endpoint from uploading the profile picture, and it takes a default value of simple image.
+3. JWT is used for authentication.
